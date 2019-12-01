@@ -18,6 +18,9 @@
     name: java-1.8.0-openjdk
     state: present
 
+- name: Change default java configuration to 1.8
+  command: alternatives --set java /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
+
 - name: Install Jenkins
   yum:
     name: jenkins

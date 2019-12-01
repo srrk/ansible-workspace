@@ -13,6 +13,11 @@
     enabled: no
     gpgcheck: yes
 
+- name: Install OpenJDK 1.8
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
+
 - name: Install Jenkins
   yum:
     name: jenkins

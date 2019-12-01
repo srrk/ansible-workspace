@@ -1,12 +1,12 @@
 ---
 # tasks file for jenkins
 - name: Import Jenkins GPG Key
-  rpm key:
+  rpm_key:
     state: present
     key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 
 - name: Add Jenkins Repository
-  yum_repository: jenkins
+  yum_repository:
     name: jenkins
     description: Jenkins Repository
     baseurl: http://pkg.jenkins.io/redhat
@@ -21,6 +21,6 @@
 
 - name: Start Jenkins
   service:
-    name: jenkins-2.45
+    name: jenkins
     enabled: yes
     state: started
